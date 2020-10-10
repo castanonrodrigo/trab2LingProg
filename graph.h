@@ -17,6 +17,8 @@ class Graph{
     vector<Vertice> *getVerticesArray();
     //retorna o nome do vertice de maior peso do grafo
     string getMostUsedVerticeName();
+
+    Aresta getMostUsedAresta();
   private:
     //array de vertices do grafo
     vector<Vertice> verticesArray;

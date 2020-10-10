@@ -46,3 +46,15 @@ void Vertice::addAresta(Vertice *startVertice, Vertice *endVertice){
 vector<Aresta> *Vertice::getArestas(){
   return &arestas;
 }
+
+Aresta Vertice::getMostUsedAresta(){
+  int highestWeight = 0;
+  int arestaIndex;
+  for(int i=0; i < arestas.size(); i++){
+    if(arestas[i].getWeight() > highestWeight){
+      highestWeight = arestas[i].getWeight();
+      arestaIndex = i;
+    }
+  }
+  return arestas[arestaIndex];
+}

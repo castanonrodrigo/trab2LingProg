@@ -20,9 +20,8 @@ int main(){
   vector<Vertice> *graphVertices = grafo.getVerticesArray();
   vector<string> wordsArray;
   string fileName;
-  fileName = "teste.txt";
-  /* cout << "Insira o nome do arquivo que será utilizado: " <<endl; */
-  /* cin >> fileName; */
+  cout << "Insira o nome do arquivo que será utilizado: " <<endl;
+  cin >> fileName;
   
   ifstream MyReadFile(fileName);
   while(getline(MyReadFile, myText)){
@@ -56,15 +55,16 @@ int main(){
     }
   }
   MyReadFile.close();
-  cout << "tamanho do array de vetores: " << graphVertices->size() << endl;
-  /* for (int i = 0; i < graphVertices->size(); i++) { */
-  /*   cout << (*graphVertices)[i].getName() << " :" */
-  /*        << (*graphVertices)[i].getWeight() << endl; */
-  /* } */
+  cout << "-------------VERTICES COM PESOS-------------------"<<endl;
+  for (int i = 0; i < graphVertices->size(); i++) {
+    cout << (*graphVertices)[i].getName() << " :"
+         << (*graphVertices)[i].getWeight() << endl;
+  }
   cout << "vertice que mais aparece: " << grafo.getMostUsedVerticeName()<<endl;
-  /* cout << "vertice destino do primeiro elemento:" */
-  /*      << (*(*graphVertices)[0].getArestas())[0].getEndVertice()->getName() */
-  /*      << endl; */
+  cout <<endl;
+  cout << "-------------ARESTA QUE MAIS APARECE---------------"<<endl;
+  cout << grafo.getMostUsedAresta().getStartVertice()->getName() <<endl;
+  cout << grafo.getMostUsedAresta().getEndVertice()->getName() <<endl;
   return 1;
 };
 

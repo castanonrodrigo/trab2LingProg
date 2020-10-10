@@ -20,6 +20,8 @@ class Vertice{
     void addAresta(Vertice *, Vertice *);
     //retorna referencia para array de arestas do vertice
     vector<Aresta> *getArestas();
+    //retorna aresta envolvendo esse vertice que mais aparece
+    Aresta getMostUsedAresta();
 
   private:
     string name;

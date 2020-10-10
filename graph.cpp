@@ -51,4 +51,16 @@ vector<Vertice> *Graph::getVerticesArray(){
   return &verticesArray;
 }
 
+Aresta Graph::getMostUsedAresta(){
+  int highestWeight = 0;
+  int verticeIndex;
+  for(int i =0; i < verticesArray.size(); i++){
+    if(verticesArray[i].getMostUsedAresta().getWeight() > highestWeight){
+      highestWeight = verticesArray[i].getMostUsedAresta().getWeight();
+      verticeIndex = i;
+    }
+  }
+  return verticesArray[verticeIndex].getMostUsedAresta();
+}
+
 
