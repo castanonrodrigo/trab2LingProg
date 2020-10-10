@@ -24,7 +24,6 @@ int main(){
   /* cout << "Insira o nome do arquivo que será utilizado: " <<endl; */
   /* cin >> fileName; */
   
-
   ifstream MyReadFile(fileName);
   while(getline(MyReadFile, myText)){
     string word = "";
@@ -58,23 +57,14 @@ int main(){
   }
   MyReadFile.close();
   cout << "tamanho do array de vetores: " << graphVertices->size() << endl;
-  for (int i = 0; i < graphVertices->size(); i++) {
-    cout << (*graphVertices)[i].getName() << " :"
-         << (*graphVertices)[i].getWeight() << endl;
-  }
+  /* for (int i = 0; i < graphVertices->size(); i++) { */
+  /*   cout << (*graphVertices)[i].getName() << " :" */
+  /*        << (*graphVertices)[i].getWeight() << endl; */
+  /* } */
   cout << "vertice que mais aparece: " << grafo.getMostUsedVerticeName()<<endl;
-  const int vIndex = 2;
-  /* cout << "peso das arestas de: " << (*graphVectors)[vIndex].getName()<<endl; */
-  /* cout << "quantidade de arestas" << (*(*graphVectors)[vIndex].getArestas()).size()<<endl; */
-  /* cout << "primeiro vertice:" <<(*(*graphVectors)[vIndex].getArestas())[0].getStartVertice()->getName() <<endl; */
-  /* cout << "segundo vertice:" <<(*(*graphVectors)[vIndex].getArestas())[0].getEndVertice()->getName() <<endl; */
-  /* cout << "peso aresta: " */
-  /*      << (*(*graphVertices)[0].getArestas())[0].getWeight() */
-  /*      <<endl; */
-  /* cout << "vertice origem do primeiro elemento:" */
-  /*      << (*(*(*graphVertices)[0].getArestas())[0].getEndVertice()).getName() */
+  /* cout << "vertice destino do primeiro elemento:" */
+  /*      << (*(*graphVertices)[0].getArestas())[0].getEndVertice()->getName() */
   /*      << endl; */
   return 1;
-
 };
 

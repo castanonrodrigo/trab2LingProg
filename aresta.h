@@ -7,8 +7,6 @@ class Aresta{
     Aresta(Vertice *, Vertice *);
     //retorna peso da aresta
     int getWeight();
-    //altera peso da aresta
-    void setWeight(int);
     //aumenta em uma unidade peso da aresta
     void increaseWeight();
     //retorna ponteiro para vertice de origem

@@ -14,8 +14,6 @@ class Vertice{
     int getWeight();
     //retorna nome do vertice
     string getName();
-    //altera peso do vertice
-    void setWeight(int);
     //aumenta o peso do vertice em uma unidade
     void increaseWeight();
     //adiciona uma aresta ao vertice
