@@ -34,6 +34,18 @@ Vertice *Graph::findVerticeByName(string name){
   return nullptr;
 }
 
+string Graph::getMostUsedVerticeName(){
+  int soma = 0;
+  string name;
+  for(int i = 0; i < verticesArray.size(); i++){
+    if (verticesArray[i].getWeight() > soma){
+      soma = verticesArray[i].getWeight();
+      name = verticesArray[i].getName();
+    }
+  }
+  return name;
+}
+
 
 vector<Vertice> *Graph::getVerticesArray(){
   return &verticesArray;

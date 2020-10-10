@@ -17,10 +17,15 @@ int main(){
   string myText;
   Graph grafo;
   string ponctuationCaracters[] = {".",",",";","!","?"};
-  vector<Vertice> *graphVectors = grafo.getVerticesArray();
+  vector<Vertice> *graphVertices = grafo.getVerticesArray();
   vector<string> wordsArray;
+  string fileName;
+  fileName = "teste.txt";
+  /* cout << "Insira o nome do arquivo que será utilizado: " <<endl; */
+  /* cin >> fileName; */
+  
 
-  ifstream MyReadFile("teste.txt");
+  ifstream MyReadFile(fileName);
   while(getline(MyReadFile, myText)){
     string word = "";
     for (int index = 0;index <= myText.length() ; index++) {
@@ -52,14 +57,23 @@ int main(){
     }
   }
   MyReadFile.close();
-  cout <<"tamanho do array de vetores: " <<graphVectors->size() << endl;
-  for (int i =0; i < graphVectors->size(); i++){
-    cout << (*graphVectors)[i].getName() << " :" << (*graphVectors)[i].getWeight() << endl;
+  cout << "tamanho do array de vetores: " << graphVertices->size() << endl;
+  for (int i = 0; i < graphVertices->size(); i++) {
+    cout << (*graphVertices)[i].getName() << " :"
+         << (*graphVertices)[i].getWeight() << endl;
   }
-  cout << "peso das arestas de: " << (*graphVectors)[1].getName()<<endl;
-  cout << "quantidade de arestas" << (*(*graphVectors)[1].getArestas()).size()<<endl;
-  cout << "peso: "<<(*(*graphVectors)[0].getArestas())[0].getWeight() <<endl;
-  cout << "segundo vertice:" <<(*(*graphVectors)[0].getArestas())[0].getEndVertice()->getName() <<endl;
+  cout << "vertice que mais aparece: " << grafo.getMostUsedVerticeName()<<endl;
+  const int vIndex = 2;
+  /* cout << "peso das arestas de: " << (*graphVectors)[vIndex].getName()<<endl; */
+  /* cout << "quantidade de arestas" << (*(*graphVectors)[vIndex].getArestas()).size()<<endl; */
+  /* cout << "primeiro vertice:" <<(*(*graphVectors)[vIndex].getArestas())[0].getStartVertice()->getName() <<endl; */
+  /* cout << "segundo vertice:" <<(*(*graphVectors)[vIndex].getArestas())[0].getEndVertice()->getName() <<endl; */
+  /* cout << "peso aresta: " */
+  /*      << (*(*graphVertices)[0].getArestas())[0].getWeight() */
+  /*      <<endl; */
+  /* cout << "vertice origem do primeiro elemento:" */
+  /*      << (*(*(*graphVertices)[0].getArestas())[0].getEndVertice()).getName() */
+  /*      << endl; */
   return 1;
 
 };
